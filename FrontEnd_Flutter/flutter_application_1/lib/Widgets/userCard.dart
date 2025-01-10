@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import '../models/userModel.dart'; // Ajusta la ruta si tu modelo está en otra carpeta
+import '../models/userModel.dart'; 
+import 'package:flutter_application_1/screen/editUser.dart';
+import 'package:get/get.dart';
+
 
 class UserCard extends StatelessWidget {
   final UserModel user;
@@ -23,6 +26,15 @@ class UserCard extends StatelessWidget {
             Text(user.mail),
             const SizedBox(height: 8),
             Text(user.comment ?? "Sin comentarios"),
+
+            //Afegit: modificar usuari
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => EditUserPage(user: user));
+              },
+              child: Text("Editar"),
+            ),
           ],
         ),
       ),

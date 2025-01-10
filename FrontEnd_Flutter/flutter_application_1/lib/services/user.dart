@@ -70,7 +70,7 @@ class UserService {
     }
   }
 
-  Future<int> EditUser(UserModel newUser, String id) async {
+  Future<int> EditUser(String id, UserModel newUser,) async {
     print('createUser');
     print('try');
     //Aquí llamamos a la función request
